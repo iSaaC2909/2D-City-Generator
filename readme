@@ -1,0 +1,153 @@
+# 2D Procedural City Generator
+
+A sophisticated Objective-C framework for generating dynamic, procedurally-generated 2D cities with realistic urban planning features.
+
+## 🏗️ Features
+
+- **Procedural Generation**: Unique city layouts every time with seed support
+- **Smart Zoning**: Residential, commercial, and industrial districts
+- **Road Networks**: Hierarchical road system with main avenues and local streets
+- **Building Variety**: Structures with different heights, styles, and purposes
+- **Park System**: Green spaces and recreational areas
+- **Extensible Architecture**: Easy to modify and extend with new features
+
+## 🚀 Quick Start
+
+### Prerequisites
+- macOS 10.12+
+- Xcode 9.0+
+- Cocoa framework
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/your-username/procedural-city-generator.git
+```
+
+2. Open in Xcode:
+```bash
+cd procedural-city-generator
+open CityGenerator.xcodeproj
+```
+
+3. Build and run (⌘+R)
+
+### Basic Usage
+
+```objectivec
+// Create city generator
+CityGenerator *generator = [[CityGenerator alloc] initWithWidth:50 height:50 cellSize:10.0];
+
+// Generate a random city
+[generator generateCity];
+
+// Generate with specific seed for reproducibility
+[generator generateWithSeed:12345];
+```
+
+## 🏙️ Architecture
+
+### Core Components
+
+#### CityGenerator
+The main controller class that orchestrates city generation:
+- Manages road network creation
+- Handles building placement and zoning
+- Controls park generation and distribution
+
+#### Building System
+- **Building Types**: Residential, Commercial, Industrial, Parks
+- **Procedural Attributes**: Height, color, size variations
+- **Smart Placement**: Road-adjacent positioning
+
+#### Road Network
+- **Hierarchical Design**: Avenues vs. streets
+- **Connectivity**: Ensures accessible city layout
+- **Realistic Patterns**: Grid-based with organic variations
+
+## 🎮 Advanced Features
+
+### Customization Options
+
+```objectivec
+// Adjust generation parameters
+generator.gridWidth = 100;        // City width in cells
+generator.gridHeight = 100;       // City height in cells  
+generator.cellSize = 8.0;         // Pixel size per cell
+```
+
+### Seed-based Generation
+Generate reproducible city layouts for consistent results:
+```objectivec
+[generator generateWithSeed:8675309];  // Jenny's city!
+```
+
+### Extending Building Types
+Add new building types by extending the `BuildingType` enum and modifying the generation logic in `placeBuildings` method.
+
+## 🔧 Technical Details
+
+### Algorithm Overview
+1. **Road Generation**: Create main arteries then local streets
+2. **Zoning Analysis**: Determine district boundaries
+3. **Building Placement**: Position structures based on zoning and road access
+4. **Feature Enhancement**: Add parks, landmarks, and special buildings
+5. **Rendering**: Draw with appropriate colors and details
+
+### Performance
+- Optimized for cities up to 100x100 cells
+- Efficient collision detection and spatial queries
+- Minimal memory footprint with object reuse
+
+## 📁 Project Structure
+
+```
+ProceduralCityGenerator/
+├── CityGenerator.h/m          # Core generator logic
+├── CityView.h/m               # Rendering and display
+├── AppDelegate.h/m            # Application controller
+├── Building.h/m               # Building data model  
+├── Road.h/m                   # Road data model
+└── main.m                     # Application entry point
+```
+
+## 🛠️ Development
+
+### Adding New Features
+1. Extend the `BuildingType` enum for new structure types
+2. Modify generation probabilities in `placeBuildings`
+3. Add rendering support in `CityView.drawRect:`
+4. Update zoning logic in `generateDistricts`
+
+### Testing
+The framework includes visual testing through the demo application. Generate multiple cities to verify algorithm stability and variety.
+
+## 📄 License
+
+MIT License - feel free to use in personal and commercial projects.
+
+## 🤝 Contributing
+
+1. Fork the project
+2. Create a feature branch
+3. Commit your changes
+4. Open a Pull Request
+
+## 📞 Support
+
+Open an issue on GitHub for bug reports or feature requests.
+
+---
+
+**Create infinite cities with just a click!** 🏙️
+
+---
+
+# Very Short Descriptions
+
+## Version 1 (Technical Focus)
+**2D Procedural City Generator** - Objective-C framework for dynamic urban layout generation. Features smart zoning, hierarchical road networks, and extensible building systems. Perfect for games, simulations, or urban planning tools.
+
+## Version 2 (Benefit Focus)
+**Create Infinite Cities Instantly** - Generate unique, realistic 2D city layouts with intelligent zoning and road systems. Perfect for game developers and creative projects needing dynamic urban environments.
